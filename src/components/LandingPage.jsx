@@ -80,7 +80,7 @@ const LandingPage = ({ onEnterApp }) => {
                   </div>
                   <div className="card-title">Monthly Expenses</div>
                 </div>
-                <div className="card-value">$2,000</div>
+                <div className="card-value">₹2,000</div>
                 <div className="card-trend positive">+12.5%</div>
               </div>
               <div className="preview-card card-2">
@@ -91,7 +91,7 @@ const LandingPage = ({ onEnterApp }) => {
                   <div className="card-title">Top Category</div>
                 </div>
                 <div className="card-value">Food & Dining</div>
-                <div className="card-trend">$1,245.80</div>
+                <div className="card-trend">₹1,245.80</div>
               </div>
               <div className="preview-card card-3">
                 <div className="card-header">

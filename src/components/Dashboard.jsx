@@ -27,7 +27,7 @@ const Dashboard = ({ transactions }) => {
           </div>
           <div className="card-content">
             <h3>Total Expenses</h3>
-            <p className="amount">${totalExpenses.toFixed(2)}</p>
+            <p className="amount">₹{totalExpenses.toFixed(2)}</p>
           </div>
         </div>
         
@@ -38,7 +38,7 @@ const Dashboard = ({ transactions }) => {
           <div className="card-content">
             <h3>Top Category</h3>
             <p className="category">{topCategory.category}</p>
-            <p className="amount">${topCategory.amount.toFixed(2)}</p>
+            <p className="amount">₹{topCategory.amount.toFixed(2)}</p>
           </div>
         </div>
         
@@ -63,7 +63,7 @@ const Dashboard = ({ transactions }) => {
                   <span className="description">{transaction.description}</span>
                   <span className="category">{transaction.category}</span>
                 </div>
-                <span className="amount">${transaction.amount.toFixed(2)}</span>
+                <span className="amount">₹{transaction.amount.toFixed(2)}</span>
               </div>
             ))}
           </div>
