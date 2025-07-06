@@ -227,6 +227,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .cta-button-small:hover {
@@ -300,6 +302,7 @@
   width: fit-content;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .cta-button-primary.large {

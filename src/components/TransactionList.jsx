@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
 import { Edit2, Trash2, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const TransactionList = ({ transactions, onEdit, onDelete }) => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('date');
   const [sortOrder, setSortOrder] = useState('desc');
@@ -86,7 +88,10 @@ const TransactionList = ({ transactions, onEdit, onDelete }) => {
                   <td>
                     <div className="action-buttons">
                       <button
-                        onClick={() => onEdit(transaction)}
+                        onClick={() => {
+                          onEdit(transaction);
+                          navigate('/add');
+                        }}
                         className="btn-icon edit"
                         title="Edit"
                       >

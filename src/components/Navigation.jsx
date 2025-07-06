@@ -1,34 +1,54 @@
 
 import React from 'react';
-import { BarChart3, List, PlusCircle, PieChart } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { BarChart3, Plus, List, PieChart, DollarSign } from 'lucide-react';
 
-const Navigation = ({ activeTab, onTabChange }) => {
-  const tabs = [
-    { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
-    { id: 'add', label: 'Add Transaction', icon: PlusCircle },
-    { id: 'list', label: 'Transactions', icon: List },
-    { id: 'charts', label: 'Analytics', icon: PieChart },
-  ];
+const Navigation = () => {
+  const location = useLocation();
+  
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <nav className="navigation">
       <div className="nav-brand">
-        <h1>Finance Tracker</h1>
+        <DollarSign className="brand-icon" />
+        <span className="brand-text">Finance Tracker</span>
       </div>
-      <div className="nav-tabs">
-        {tabs.map(tab => {
-          const Icon = tab.icon;
-          return (
-            <button
-              key={tab.id}
-              className={`nav-tab ${activeTab === tab.id ? 'active' : ''}`}
-              onClick={() => onTabChange(tab.id)}
-            >
-              <Icon size={20} />
-              <span>{tab.label}</span>
-            </button>
-          );
-        })}
+      
+      <div className="nav-links">
+        <Link 
+          to="/dashboard" 
+          className={`nav-link ${isActive('/dashboard') ? 'active' : ''}`}
+        >
+          <BarChart3 size={20} />
+          <span>Dashboard</span>
+        </Link>
+        
+        <Link 
+          to="/add" 
+          className={`nav-link ${isActive('/add') ? 'active' : ''}`}
+        >
+          <Plus size={20} />
+          <span>Add Transaction</span>
+        </Link>
+        
+        <Link 
+          to="/transactions" 
+          className={`nav-link ${isActive('/transactions') ? 'active' : ''}`}
+        >
+          <List size={20} />
+          <span>Transactions</span>
+        </Link>
+        
+        <Link 
+          to="/analytics" 
+          className={`nav-link ${isActive('/analytics') ? 'active' : ''}`}
+        >
+          <PieChart size={20} />
+          <span>Analytics</span>
+        </Link>
       </div>
     </nav>
   );

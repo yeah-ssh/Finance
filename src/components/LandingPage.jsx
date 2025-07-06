@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, DollarSign, TrendingUp, PieChart, Shield, Zap, Users } from 'lucide-react';
 import './LandingPage.css';
+import { Link } from 'react-router-dom';
 
 const LandingPage = ({ onEnterApp }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,8 +28,15 @@ const LandingPage = ({ onEnterApp }) => {
     }
   ];
 
+  const stats = [
+    { number: "50K+", label: "Transactions Tracked" },
+    { number: "15K+", label: "Happy Users" },
+    { number: "99.9%", label: "Uptime" }
+  ];
+
   return (
     <div className="landing-page">
+
       <div className="bg-animation">
         <div className="floating-shapes">
           {[...Array(6)].map((_, i) => (
@@ -48,12 +56,13 @@ const LandingPage = ({ onEnterApp }) => {
             <DollarSign className="brand-icon" />
             <span className="brand-text">Finance Tracker</span>
           </div>
-          <button className="cta-button-small" onClick={onEnterApp}>
+          <Link to="/dashboard" className="cta-button-small">
             Launch App
-          </button>
+          </Link>
         </div>
       </header>
 
+     
       <section className={`hero ${isLoaded ? 'loaded' : ''}`}>
         <div className="container">
           <div className="hero-content">
@@ -65,10 +74,18 @@ const LandingPage = ({ onEnterApp }) => {
               Track expenses, analyze spending patterns, and make smarter financial decisions with our intuitive finance tracker.
             </p>
             <div className="hero-actions">
-              <button className="cta-button-primary" onClick={onEnterApp}>
+              <Link to="/dashboard" className="cta-button-primary">
                 Get Started Free
                 <ChevronRight className="button-icon" />
-              </button>
+              </Link>
+              <div className="hero-stats">
+                {stats.map((stat, index) => (
+                  <div key={index} className="stat-item">
+                    <div className="stat-number">{stat.number}</div>
+                    <div className="stat-label">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div className="hero-visual">
@@ -80,7 +97,7 @@ const LandingPage = ({ onEnterApp }) => {
                   </div>
                   <div className="card-title">Monthly Expenses</div>
                 </div>
-                <div className="card-value">₹2,000</div>
+                <div className="card-value">₹2,847.50</div>
                 <div className="card-trend positive">+12.5%</div>
               </div>
               <div className="preview-card card-2">
@@ -108,6 +125,7 @@ const LandingPage = ({ onEnterApp }) => {
         </div>
       </section>
 
+      {/* Features Section */}
       <section className="features">
         <div className="container">
           <h2 className="section-title">Everything you need to manage your money</h2>
@@ -125,19 +143,21 @@ const LandingPage = ({ onEnterApp }) => {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">
             <h2 className="cta-title">Ready to start your financial journey?</h2>
             <p className="cta-subtitle">Join thousands of users who are already taking control of their finances.</p>
-            <button className="cta-button-primary large" onClick={onEnterApp}>
+            <Link to="/dashboard" className="cta-button-primary large">
               Start Tracking Now
               <ChevronRight className="button-icon" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="landing-footer">
         <div className="container">
           <div className="footer-content">

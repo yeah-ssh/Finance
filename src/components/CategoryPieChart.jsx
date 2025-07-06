@@ -63,7 +63,7 @@ const CategoryPieChart = ({ transactions }) => {
           label: function(context) {
             const total = context.dataset.data.reduce((a, b) => a + b, 0);
             const percentage = ((context.raw / total) * 100).toFixed(1);
-            return `${context.label}: $${context.raw.toFixed(2)} (${percentage}%)`;
+            return `${context.label}: ₹${context.raw.toFixed(2)} (${percentage}%)`;
           }
         }
       }

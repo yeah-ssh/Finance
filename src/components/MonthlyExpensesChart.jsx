@@ -68,7 +68,7 @@ const MonthlyExpensesChart = ({ transactions }) => {
         beginAtZero: true,
         ticks: {
           callback: function(value) {
-            return '$' + value.toFixed(0);
+            return '₹' + value.toFixed(0);
           }
         }
       }
