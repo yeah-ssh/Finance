@@ -48,6 +48,6 @@ Finance Tracker is a modern, responsive web application that helps you **track y
 
 ```bash
 git clone https://github.com/yeah-ssh/Finance.git
-cd finance-tracker
+cd Finance
 npm install
 npm run start
