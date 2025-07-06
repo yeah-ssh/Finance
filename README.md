@@ -47,7 +47,7 @@ Finance Tracker is a modern, responsive web application that helps you **track y
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/finance-tracker.git
+git clone https://github.com/yeah-ssh/Finance.git
 cd finance-tracker
 npm install
 npm run start
